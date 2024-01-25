@@ -50,12 +50,15 @@ const Drivers: FC = () => {
   }, [])
 
   return (
-    <div className='Drivers'>
-      {drivers.map((driver: TDriver) => {
-        return (
-          <DriverCard key={uuidv4()} driver={driver} onOvertake={overtake} />
-        )
-      })}
+    <div className='main'>
+      <h1>Driver Standings</h1>
+      <div className='Drivers'>
+        {drivers.map((driver: TDriver) => {
+          return (
+            <DriverCard key={uuidv4()} driver={driver} onOvertake={overtake} />
+          )
+        })}
+      </div>
     </div>
   )
 }

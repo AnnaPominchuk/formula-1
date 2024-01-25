@@ -24,15 +24,25 @@ const DriverCard: FC<Props> = (props: {
       />
       <div className='container'>
         <h1>{`${props.driver.firstname} ${props.driver.lastname}`}</h1>
-        <p>{props.driver.team}</p>
-        <p>{props.driver.place}</p>
+        <p>
+          <strong>Team:</strong>
+          {` ${props.driver.team}`}
+        </p>
+        <p>
+          <strong>Place:</strong> {` ${props.driver.place}`}
+        </p>
+        <p>
+          <strong>Code:</strong> {` ${props.driver.code}`}
+        </p>
       </div>
       <div className='action'>
         {props.driver.place > 1 && (
           <button
             className='button'
             title='overtake'
-            onClick={() => { props.onOvertake(props.driver.id) }}
+            onClick={() => {
+              props.onOvertake(props.driver.id)
+            }}
           >
             Overtake
           </button>
