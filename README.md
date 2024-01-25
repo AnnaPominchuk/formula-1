@@ -1,35 +1,67 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Formula 1 Drivers Frontend Application
 
-## Available Scripts
+📚 [**Overview**](#overview) • 📃 [**Prerequisites**](#prerequisites) • 🚀 [**Installation**](#installation) • ▶️ [**Running the Application**](#running-the-application) • 🌍 [**External API Integration**](#external-api-integration)
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Prerequisites](#prerequisites)
+3. [Installation](#installation)
+4. [Running the Application](#running-the-application)
+5. [Available Scripts](#available-scripts)
+6. [External API Integration](#external-api-integration)
+
+## Overview
+
+This frontend application is designed to interact seamlessly with the Node.js and Express backend, specifically focusing on the display and manipulation of Formula 1 drivers' information. It's built using React and leverages the power of modern TypeScript to provide a dynamic and interactive user experience.
+
+## Prerequisites
+
+- Node.js (v12.x or later)
+- npm (v6.x or later)
+
+### Installation
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/AnnaPominchuk/formula-1.git
+   ```
+2. **Navigate to the project directory**
+   ```sh
+   cd formula-1
+   ```
+3. **Install dependencies**
+   ```sh
+   npm install
+   ```
+4. **Build the project**
+   ```sh
+   npm run build
+   ```
+
+#### Running the Application
+
+1. Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
+
+#### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+##### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in the development mode.Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The page will reload if you make edits.You will also see any lint errors in the console.
 
-### `npm test`
+##### `npm run build`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Builds the app for production to the `build` folder.It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The build is minified and the filenames include the hashes.Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+##### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -39,8 +71,8 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### External API Integration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This application integrates the [Flagpedia API](https://flagpedia.net/download/api) for fetching national flags of Formula 1 drivers' countries. The API provides a simple and efficient way to retrieve high-quality flag images, which are displayed alongside the drivers' information in the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This integration enhances the visual appeal of the application and provides an engaging user experience by visually representing the drivers' nationalities.
