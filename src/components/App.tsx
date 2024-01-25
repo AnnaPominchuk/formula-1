@@ -1,62 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate
+} from 'react-router-dom'
 import type { FC } from 'react'
-import { v4 as uuidv4 } from 'uuid'
-import './App.css'
-import DriverCard from './DriverCard'
-
-import type { TDriver } from '../types/Driver'
-const url = process.env.REACT_APP_DEV_URL
+import Drivers from './Drivers'
 
 const App: FC = () => {
-  const [drivers, setDrivers] = useState<TDriver[]>([])
-
-  const overtake = (id: number): void => {
-    fetch(`${url}/api/drivers/${id}/overtake`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then((response) => {
-        if (response.status !== 200) return Promise.reject(response.statusText)
-      })
-      .then(() => {
-        return fetch(`${url}/api/drivers`)
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        data.data.sort((driverLhs: TDriver, driverRhs: TDriver) => {
-          return driverLhs.place - driverRhs.place
-        })
-        setDrivers(data.data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
-
-  useEffect(() => {
-    fetch(`${url}/api/drivers`)
-      .then((response) => response.json())
-      .then((data) => {
-        data.data.sort((driverLhs: TDriver, driverRhs: TDriver) => {
-          return driverLhs.place - driverRhs.place
-        })
-        setDrivers(data.data)
-      })
-      .catch((err) => {
-        console.log(err.message)
-      })
-  }, [])
-
   return (
-    <div className='App'>
-      {drivers.map((driver: TDriver) => {
-        return (
-          <DriverCard key={uuidv4()} driver={driver} onOvertake={overtake} />
-        )
-      })}
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/drivers' element={<Drivers />} />
+        <Route path='/' element={<Navigate to='/drivers' />} />
+      </Routes>
+    </Router>
   )
 }
 
