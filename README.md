@@ -34,14 +34,36 @@ This frontend application is designed to interact seamlessly with the Node.js an
    ```sh
    npm install
    ```
-4. **Build the project**
+4. **Setting Up Environment Variables**
+
+   To configure the Formula 1 Drivers Backend Application, you may need to set up certain environment variables, including the port where the application should run. Follow these steps to create a `.env` file and specify the necessary variables:
+
+   - In the root directory, create a new file named `.env` if it doesn't already exist.
+
+   - Open the `.env` file using a text editor of your choice.
+
+   - Add the following environment variable to the `.env` file to specify the port where the application should run (e.g., port 8000):
+
+      ```plaintext
+      REACT_APP_DEV_URL=http://localhost:8000
+      ```
+
+5. **Build the project**
    ```sh
    npm run build
    ```
 
 #### Running the Application
 
-1. Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
+1. To run the Production build, first install serve using
+   ```sh
+   npm install -g serve
+   ```
+3. Then run
+   ```sh
+   serve -s build
+   ```
+2. After, open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
 
 #### Available Scripts
 
