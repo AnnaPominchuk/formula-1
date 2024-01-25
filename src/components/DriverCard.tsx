@@ -34,6 +34,14 @@ const DriverCard: FC<Props> = (props: {
         <p>
           <strong>Code:</strong> {` ${props.driver.code}`}
         </p>
+        <img
+          src={`https://flagcdn.com/16x12/${props.driver.country.toLocaleLowerCase()}.png`}
+          srcSet={`https://flagcdn.com/32x24/${props.driver.country.toLocaleLowerCase()}.png 2x,
+                    https://flagcdn.com/48x36/ua.png 3x`}
+          width='32'
+          height='24'
+          alt={props.driver.country}
+        ></img>
       </div>
       <div className='action'>
         {props.driver.place > 1 && (
