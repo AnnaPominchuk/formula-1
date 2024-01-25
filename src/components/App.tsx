@@ -16,10 +16,21 @@ const App: FC = () => {
         'Content-Type': 'application/json',
       },
     })
+      .then((response) => {
+        if (response.status !== 200) return Promise.reject(response.statusText);
+      })
+      .then(() => {
+        return fetch(`${url}/api/drivers`);
+      })
       .then((response) => response.json())
-      .then((data) => {})
+      .then((data) => {
+        data.data.sort((driverLhs: TDriver, driverRhs: TDriver) => {
+          return driverLhs.place - driverRhs.place;
+        });
+        setDrivers(data.data);
+      })
       .catch((err) => {
-        console.log(err.message);
+        console.log(err);
       });
   };
 
@@ -35,7 +46,7 @@ const App: FC = () => {
       .catch((err) => {
         console.log(err.message);
       });
-  }, [overtake]);
+  }, []);
 
   return (
     <div className='App'>
