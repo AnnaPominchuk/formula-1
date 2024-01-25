@@ -1,10 +1,10 @@
-export type TDriver = {
-  id: number;
-  code: string;
-  firstname: string;
-  lastname: string;
-  country: string;
-  team: string;
-  imgUrl: string;
-  place: number;
-};
+export interface TDriver {
+  id: number
+  code: string
+  firstname: string
+  lastname: string
+  country: string
+  team: string
+  imgUrl: string
+  place: number
+}

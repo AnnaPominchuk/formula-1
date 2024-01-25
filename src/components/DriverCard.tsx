@@ -1,18 +1,19 @@
-import type { FC } from 'react';
+import React from 'react'
+import type { FC } from 'react'
 
-import './DriverCard.css';
-import { TDriver } from '../types/Driver';
+import './DriverCard.css'
+import type { TDriver } from '../types/Driver'
 
-type onOvertakeCB = (id: number) => void;
+type onOvertakeCB = (id: number) => void
 
-type Props = {
-  driver: TDriver;
-  onOvertake: onOvertakeCB;
-};
+interface Props {
+  driver: TDriver
+  onOvertake: onOvertakeCB
+}
 
 const DriverCard: FC<Props> = (props: {
-  driver: TDriver;
-  onOvertake: onOvertakeCB;
+  driver: TDriver
+  onOvertake: onOvertakeCB
 }) => {
   return (
     <div className='card'>
@@ -31,14 +32,14 @@ const DriverCard: FC<Props> = (props: {
           <button
             className='button'
             title='overtake'
-            onClick={() => props.onOvertake(props.driver.id)}
+            onClick={() => { props.onOvertake(props.driver.id) }}
           >
             Overtake
           </button>
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DriverCard;
+export default DriverCard
